@@ -55,11 +55,21 @@ p {
   margin: 0 0 60px 0;
 }
 .section-title {
-  margin: 0 0 40px 0;
-  // font-family: 'interdisplay-medium';
-  font-size: 56px;
+  margin: 0 0 35px 0;
+  font-size: 30px;
   color: config.$violetcolor;
   line-height: 1.2;
+  text-transform: uppercase;
+}
+.page-title {
+  margin: 0 0 30px 0;
+  font-size: 75px;
+  text-transform: uppercase;
+  color: config.$violetcolor;
+  line-height: 1;
+}
+.violet-color {
+  color: config.$violetcolor;
 }
 
 
@@ -91,6 +101,7 @@ p {
 // Main image
 .main-image {
   height: 900px;
+  margin: 0 0 35px 0;
   border-radius: 0 0 30px 30px;
   overflow: hidden;
 }
@@ -138,8 +149,8 @@ p {
 
   .calculator-right {
     position: absolute;
-    top: -110px;
-    right: 306px;
+    top: -180px;
+    right: 0;
     width: 306px;
     height: 326px;
   }
@@ -190,14 +201,15 @@ p {
   }
 }
 
+// To top
 .to-top {
   width: 100px;
   height: 100px;
   margin: 0 auto 42px auto;
   cursor: pointer;
-}
-.to-top img {
-  width: 100%;
+  .to-top img {
+    width: 100%;
+  }
 }
 
 // Footer
@@ -264,6 +276,81 @@ p {
     font-size: 24px;
   }
 }
+
+.about-page {
+  .about-section {
+    padding: 0 0 100px 0;
+    .about-text {
+      margin: 0 0 40px 0;
+    }
+    .about-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .about-photos-item {
+      height: 250px;
+    }
+  }
+
+  .our-company-today-section {
+    padding: 90px 0;
+    background: config.$violetgradient;
+    .our-company-today-title {
+      margin: 0 0 65px 0;
+      font-size: 75px;
+      color: #fff;
+      text-align: center;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px 25px;
+      justify-content: center;
+    }
+    .our-company-today-item {
+      width: 250px;
+    }
+    .our-company-today-item__image {
+      width: max-content;
+      margin: 0 auto 25px auto;
+    }
+    .our-company-today-item__title {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .quality-right {
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 317px;
+    }
+    .quality-right img {
+      width: 100%;
+    }
+  }
+
+  .partners-section {
+    padding: 40px 0 100px 0;
+    background-color: config.$lightgreycolor;
+    .partners {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .partners-item {
+      padding: 25px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+  }
+}
+
 
 .callback-btn {
   display: flex;

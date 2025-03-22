@@ -112,8 +112,10 @@ const callbackModalBtn = document.querySelector('.js-callback-modal-btn');
 const callbackModal = document.querySelector('#callback-modal');
 const modalCloseBtns = document.querySelectorAll('.modal-window .modal-close');
 
-callbackModalBtn.onclick = function () {
-  modalWindowOpen(callbackModal);
+if (callbackModalBtn) {
+  callbackModalBtn.onclick = function () {
+    modalWindowOpen(callbackModal);
+  }
 }
 
 function modalWindowOpen(win) {
