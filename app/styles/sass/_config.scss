@@ -1,5 +1,4 @@
 // USER VARIABLES SECTION
-
 $violetcolor: #6B2FE2; // Violet Color
 $whitecolor: #FEFEFE; // White Color
 $darkgreycolor: #FEFEFE; // Dark Grey Color
@@ -16,9 +15,6 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Fon
 // IMPORT SECTION
 
 // @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
 
 // FONTS LOAD SECTION
 
@@ -32,18 +28,17 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Fon
 }
 
 @include font('russo-one', normal, 400, '../fonts/russo-one.woff2');
+@include font('opensans-regular', italic, 400, '../fonts/OpenSans-Regular.woff2');
 @include font('opensans-semibold', italic, 400, '../fonts/OpenSans-SemiBold.woff2');
-// @include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-// @include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+@include font('opensans-bold', italic, 400, '../fonts/OpenSans-Bold.woff2');
 
 // GENERAL CSS SETTINGS
-
 * {
   box-sizing: border-box;
 }
 
 ::placeholder {
-  color: $darkgreycolor;
+  color: #9E9E9E;
 }
 
 input, textarea {
@@ -56,12 +51,39 @@ input, textarea {
   }
 }
 
+input:active,
+input:focus,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+textarea {
+  resize: none;
+}
+a, a:focus, a:active {
+  outline: none;
+}
+a, a:hover {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+button, button:focus, button:active {
+  outline: none;
+}
+
 body {
   font-family: $userfont;
   font-size: $fontsize;
   line-height: $lineheight;
   color: $textcolor;
   min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
   position: relative;
   overflow-x: hidden;
 }
