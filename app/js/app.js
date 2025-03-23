@@ -1,7 +1,4 @@
-// // Import vendor jQuery plugin example
-// import '~/app/libs/mmenu/dist/mmenu.js'
-
-
+import IMask from 'imask';
 
 const body = document.querySelector('body');
 
@@ -15,6 +12,21 @@ if (toTop) {
     scroll(0, 0);
   }
 }
+
+// Input phone mask
+function inputPhoneMask() {
+  const elementPhone = document.querySelectorAll('.js-input-phone-mask');
+
+  const maskOptionsPhone = {
+    mask: '+{7} (000) 000 00 00'
+  };
+
+  elementPhone.forEach((item) => {
+    const mask = IMask(item, maskOptionsPhone);
+  });
+}
+
+inputPhoneMask();
 
 
 // Mobile menu

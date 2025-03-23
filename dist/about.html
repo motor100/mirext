@@ -23,13 +23,13 @@
         </div>
         <div class="top-menu">
           <div class="menu-item">
-            <a href="#">Продукция</a>   
+            <a href="/products.html">Продукция</a>   
           </div>
           <div class="menu-item">
             <a href="/about.html">О компании</a>
           </div>
           <div class="menu-item">
-            <a href="#">Контакты</a>
+            <a href="/contacts.html">Контакты</a>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
     <img src="images/dist/about-image.jpg" alt="">
   </div>
 
-  <div class="about-page">
+  <div class="about-content">
     <div class="about-section">
       <div class="container">
         <div class="page-title">О КОМПАНИИ</div>
@@ -182,13 +182,13 @@
               <a href="/">Главная</a>   
             </div>
             <div class="menu-item">
-              <a href="#">Продукция</a>
+              <a href="/products">Продукция</a>
             </div>
             <div class="menu-item">
               <a href="/about.html">О компании</a>
             </div>
             <div class="menu-item">
-              <a href="#">Контакты</a>
+              <a href="/contacts">Контакты</a>
             </div>
           </div>
           <div class="contacts">
@@ -234,23 +234,21 @@
         <div class="modal-close">
           <div class="close"></div>
         </div>
+        <div class="modal-title">ЗАПОЛНИТЕ ФОРМУ ЗАЯВКИ</div>        
         <form id="callback-modal-form" class="form">
           <div class="form-group">
-            <label for="name-callback-modal" class="label">Имя <span class="accentcolor">*</span></label>
-            <input type="text" name="name" id="name-callback-modal" class="input-field js-required-name" required minlength="3" maxlength="20" placeholder="Имя">
+            <label for="name-callback-modal" class="label">Имя <span class="violet-color">*</span></label>
+            <input type="text" name="name" id="name-callback-modal" class="input-field js-required-name" required minlength="3" maxlength="20">
           </div>
           <div class="form-group">
-            <label for="phone-callback-modal" class="label">Email <span class="accentcolor">*</span></label>
-            <input type="text" name="phone" id="phone-callback-modal" class="input-field js-required-phone js-input-phone-mask" required size="18" placeholder="+7 (000) 000 00 00">
+            <label for="phone-callback-modal" class="label">Email <span class="violet-color">*</span></label>
+            <input type="text" name="phone" id="phone-callback-modal" class="input-field js-required-phone js-input-phone-mask" required size="18">
           </div>
           <div class="form-group">
-            <label for="message-callback-modal" class="label">Сообщение</label>
-            <textarea type="text" name="message" id="message-callback-modal" class="input-field"></textarea>
+            <label for="message-callback-modal" class="label">Сообщение <span class="violet-color">*</span></label>
+            <input type="text" name="message" id="message-callback-modal" class="input-field" required minlength="3" maxlength="250">
           </div>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <button type="button" id="callback-modal-submit-btn" class="modal-submit-btn">
-            <span class="modal-submit-btn__text">Отправить</span>
-          </button>
           <div class="agreement-text">
             <input type="checkbox" name="checkbox-read" class="custom-checkbox js-required-checkbox" id="checkbox-read-callback-modal" checked required onchange="document.getElementById('callback-submit-btn').disabled = !this.checked;">
             <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
@@ -261,6 +259,9 @@
             <label for="checkbox-agree-callback-modal" class="custom-checkbox-label"></label>
             <span class="checkbox-text">Согласен на <a href="/agreement" class="agreement-link" target="_blank">обработку персональных данных</a></span>
           </div>
+          <button type="button" id="callback-submit-btn" class="modal-submit-btn">
+            <span class="modal-submit-btn__text">Отправить</span>
+          </button>
         </form>
       </div>
     </div>
