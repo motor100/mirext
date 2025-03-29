@@ -333,59 +333,94 @@ p {
     display: flex;
     gap: 60px;
   }
-  .logo {
-    margin-bottom: 15px;
-    width: 200px;
+  .footer-top {
+    margin: 0 0 30px 0;
+    .logo-wrapper,
+    .contacts {
+      width: 310px;
+      flex-shrink: 0;
+    }
+    .logo {
+      margin-bottom: 15px;
+      width: 200px;
+    }
+    .logo img {
+      width: 100%;
+    }
+    .address {
+      margin: 0 0 20px 0;
+      font-family: 'opensans-regular';
+      font-size: 14px;
+    }
+    .company-info {
+      font-family: 'opensans-regular';
+    }
+    .bottom-menu {
+      flex-grow: 1;
+    }
+    .bottom-menu .menu-item {
+      margin: 0 0 16px 0;
+    }
+    .bottom-menu .menu-item a {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .contacts {
+      text-align: right;
+    }
+    .phones {
+      margin: 0 0 25px 0;
+    }
+    .phones .phone {
+      margin: 0 0 5px 0;
+      
+      font-size: 20px;
+    }
+    .email {
+      margin: 0 0 35px 0;
+      font-size: 20px;
+    }
+    .mobile-phone {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .mobile-phone__link {
+      display: block;
+    }
+    .mobile-phone .phone {
+      font-size: 24px;
+    }
   }
-  .logo img {
-    width: 100%;
-  }
-  .address {
-    margin: 0 0 20px 0;
+  .footer-bottom {
     font-family: 'opensans-regular';
-    font-size: 14px;
-  }
-  .company-info {
-    font-family: 'opensans-regular';
-  }
-  .bottom-menu {
-    flex-grow: 1;
-  }
-  .bottom-menu .menu-item {
-    margin: 0 0 16px 0;
-  }
-  .bottom-menu .menu-item a {
-    font-size: 20px;
-    color: #fff;
-    text-transform: uppercase;
-  }
-  .contacts {
-    width: 300px;
-    text-align: right;
-  }
-  .phones {
-    margin: 0 0 25px 0;
-  }
-  .phones .phone {
-    margin: 0 0 5px 0;
-    
-    font-size: 20px;
-  }
-  .email {
-    margin: 0 0 35px 0;
-    font-size: 20px;
-  }
-  .mobile-phone {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .mobile-phone__link {
-    display: block;
-  }
-  .mobile-phone .phone {
-    font-size: 24px;
+    .current-year,
+    .authors {
+      width: 310px;
+      flex-shrink: 0;
+    }
+    .required-links {
+      flex-grow: 1;
+    }
+    .required-links a {
+      color: config.$whitecolor;
+    }
+    .required-links-item:first-child {
+      margin: 0 0 10px 0;
+    }
+    .authors {
+      width: 300px;
+      text-align: right;
+    }
+    .authors a {
+      color: config.$whitecolor;
+    }
+    .authors-item:first-child {
+      margin: 0 0 10px 0;
+    }
+
   }
 }
 

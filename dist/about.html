@@ -165,7 +165,6 @@
 </script>
 
   <footer class="footer">
-    
     <div class="footer-top">
       <div class="container">
         <div class="flex-container">
@@ -217,10 +216,27 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="flex-container">
-          <div id="current-year"></div>
+          <div id="current-year" class="current-year"></div>
+          <div class="required-links">
+            <div class="required-links-item">
+              <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div class="required-links-item">
+              <a href="#">Согласие на обработку персональных данных</a>
+            </div>
+          </div>
+          <div class="authors">
+            <div class="authors-item">
+              <a href="https://vk.com/fenix_mix" target="_blank">
+                <img src="images/dist/fenix.png" alt="">
+              </a>
+            </div>
+            <div class="authors-item">
+              <a href="https://mybutton.ru" target="_blank">Поддержка Button</a>
+            </div>
+          </div>
         </div>
       </div>
-      
     </div>
   </footer>
 
@@ -251,7 +267,6 @@
             <label for="message-callback-modal" class="label">Сообщение <span class="violet-color">*</span></label>
             <input type="text" name="message" id="message-callback-modal" class="input-field" required minlength="3" maxlength="250">
           </div>
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="agreement-text">
             <input type="checkbox" name="checkbox-read" class="custom-checkbox js-required-checkbox" id="checkbox-read-callback-modal" checked required onchange="document.getElementById('callback-submit-btn').disabled = !this.checked;">
             <label for="checkbox-read-callback-modal" class="custom-checkbox-label"></label>
