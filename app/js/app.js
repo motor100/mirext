@@ -2,13 +2,18 @@ import IMask from 'imask';
 
 const body = document.querySelector('body');
 
+// Top menu item set active
+const topMenuItem = document.querySelectorAll('.top-menu .menu-item');
 
+if (typeof(topMenuItemActive) != "undefined" && topMenuItemActive !== null) {
+  topMenuItem[topMenuItemActive].classList.add('active');
+}
 
 // To top кнопка вверх
-const toTop = document.getElementById("to-top");
+const toTopImage = document.getElementById("to-top-image");
 
-if (toTop) {
-  toTop.onclick = () => {
+if (toTopImage) {
+  toTopImage.onclick = () => {
     scroll(0, 0);
   }
 }
@@ -69,9 +74,6 @@ for (let i=0; i < listParentClick.length; i++) {
   }
 }
 */
-
-
-
 
 
 // Current year
@@ -164,3 +166,4 @@ function modalWindowClose(win) {
     win.classList.remove('active');
   }, 300);
 }
+

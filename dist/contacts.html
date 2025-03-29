@@ -23,13 +23,13 @@
         </div>
         <div class="top-menu">
           <div class="menu-item">
-            <a href="/products.html">Продукция</a>   
+            <a href="/products.html" class="menu-item__link">Продукция</a>   
           </div>
           <div class="menu-item">
-            <a href="/about.html">О компании</a>
+            <a href="/about.html" class="menu-item__link">О компании</a>
           </div>
           <div class="menu-item">
-            <a href="/contacts.html">Контакты</a>
+            <a href="/contacts.html" class="menu-item__link">Контакты</a>
           </div>
         </div>
       </div>
@@ -42,17 +42,68 @@
     <img src="images/dist/contacts-image.jpg" alt="">
   </div>
 
-  <div class="contacts-content">
+  <div class="title-section">
     <div class="container">
       <div class="page-title">КАК НАС НАЙТИ</div>
     </div>
   </div>
 
-</div>
+  <div class="contacts-section">
+    <div class="container">
+      <div class="flex-container">
+        <div class="contacts">
+          <div class="contacts-title">Наш офис</div>
+          <ul class="list">
+            <li class="list-item">Адрес: 456300 г. Миасс Тургоякское шоссе, 7, а/я 728</li>
+            <li class="list-item">Телефон: +7 (3513) 24-06-66, 54-32-43, 54-35-95</li>
+            <li class="list-item">E-mail: mirekst@inbox.ru</li>
+            <li class="list-item">
+              <a href="/pdf/company.pdf" class="list-item__link" target="_blank">Реквизиты</a>
+            </li>
+          </ul>
+          <div class="contacts-title">Напишите нам</div>
+          <form class="form" method="post">
+            <div class="form-group">
+              <label for="name" class="label">Имя</label>
+              <input type="text" name="name" id="name" class="input-field" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="label">Email</label>
+              <input type="email" name="email" id="email" class="input-field" required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="label">Сообщение</label>
+              <textarea name="message" id="message" class="textarea"></textarea>
+            </div>
+            <div class="agreement-text">
+              <input type="checkbox" name="checkbox-read" class="custom-checkbox js-required-checkbox" id="checkbox-read-callback" checked required autocomplete="on" onchange="document.getElementById('submit-btn').disabled = !this.checked;">
+              <label for="checkbox-read-callback" class="custom-checkbox-label"></label>
+              <span class="checkbox-text">Ознакомлен с <a href="/privacy-policy" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>
+            </div>
+            <div class="agreement-text">
+              <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-required-checkbox" id="checkbox-agree-callbackl" checked required autocomplete="on" onchange="document.getElementById('submit-btn').disabled = !this.checked;">
+              <label for="checkbox-agree-callback" class="custom-checkbox-label"></label>
+              <span class="checkbox-text">Согласен на <a href="/agreement" class="agreement-link" target="_blank">обработку персональных данных</a></span>
+            </div>
+            <button type="button" id="submit-btn" class="submit-btn second-btn">Отправить сообщение</button>
+          </form>
+        </div>
+        <div class="map">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8aa09ed18fe29fd0659589987d0ddaf604e26a8360da5a841c9941acc65c5229&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="to-top" class="to-top">
-    <img src="images/dist/to-top.png" alt="">
+    <img src="images/dist/to-top.png" class="to-top-image" alt="">
   </div>
+
+</div>
+
+<script>
+  const topMenuItemActive = 2;
+</script>
 
   <footer class="footer">
     

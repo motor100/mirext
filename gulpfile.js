@@ -136,7 +136,8 @@ function buildcopy() {
     '{app/js,app/css}/*.min.*',
     'app/images/**/*.*',
     '!app/images/src/**/*',
-    'app/fonts/**/*'
+    'app/fonts/**/*',
+    'app/pdf/**/*', // folder with pdf documents
   ], { base: 'app/', encoding: false })
   .pipe(dest('dist'))
 }
