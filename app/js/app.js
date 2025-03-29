@@ -10,7 +10,7 @@ if (typeof(topMenuItemActive) != "undefined" && topMenuItemActive !== null) {
 }
 
 // To top кнопка вверх
-const toTopImage = document.getElementById("to-top-image");
+const toTopImage = document.querySelector(".to-top-image");
 
 if (toTopImage) {
   toTopImage.onclick = () => {
