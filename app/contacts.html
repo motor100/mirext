@@ -26,30 +26,32 @@
             </li>
           </ul>
           <div class="contacts-title">Напишите нам</div>
-          <form class="form" method="post">
+          <!-- <form id="callback-form" class="form" method="post"> -->
+          <form class="form" method="post" action="/phpmailer/mailer.php">
             <div class="form-group">
               <label for="name" class="label">Имя</label>
-              <input type="text" name="name" id="name" class="input-field" required>
+              <input type="text" name="name" id="name" class="input-field js-required-name" required>
             </div>
             <div class="form-group">
               <label for="email" class="label">Email</label>
-              <input type="email" name="email" id="email" class="input-field" required>
+              <input type="email" name="email" id="email" class="input-field js-required-email" required>
             </div>
             <div class="form-group">
               <label for="message" class="label">Сообщение</label>
               <textarea name="message" id="message" class="textarea"></textarea>
             </div>
             <div class="agreement-text">
-              <input type="checkbox" name="checkbox-read" class="custom-checkbox js-required-checkbox" id="checkbox-read-callback" checked required autocomplete="on" onchange="document.getElementById('submit-btn').disabled = !this.checked;">
+              <input type="checkbox" name="checkbox-read" class="custom-checkbox js-required-checkbox" id="checkbox-read-callback" checked required autocomplete="on" onchange="document.getElementById('callback-submit-btn').disabled = !this.checked;">
               <label for="checkbox-read-callback" class="custom-checkbox-label"></label>
               <span class="checkbox-text">Ознакомлен с <a href="/privacy-policy" class="privacy-policy-link" target="_blank">политикой конфиденциальности</a></span>
             </div>
             <div class="agreement-text">
-              <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-required-checkbox" id="checkbox-agree-callbackl" checked required autocomplete="on" onchange="document.getElementById('submit-btn').disabled = !this.checked;">
+              <input type="checkbox" name="checkbox-agree" class="custom-checkbox js-required-checkbox" id="checkbox-agree-callbackl" checked required autocomplete="on" onchange="document.getElementById('callback-submit-btn').disabled = !this.checked;">
               <label for="checkbox-agree-callback" class="custom-checkbox-label"></label>
               <span class="checkbox-text">Согласен на <a href="/agreement" class="agreement-link" target="_blank">обработку персональных данных</a></span>
             </div>
-            <button type="button" id="submit-btn" class="submit-btn second-btn">Отправить сообщение</button>
+            <!-- <button type="button" id="callback-submit-btn" class="submit-btn second-btn">Отправить сообщение</button> -->
+            <button type="submit" class="submit-btn second-btn">Отправить сообщение</button>
           </form>
         </div>
         <div class="map">

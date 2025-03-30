@@ -138,6 +138,7 @@ function buildcopy() {
     '!app/images/src/**/*',
     'app/fonts/**/*',
     'app/pdf/**/*', // folder with pdf documents
+    'app/phpmailer/**/*', // folder phpmailer
   ], { base: 'app/', encoding: false })
   .pipe(dest('dist'))
 }

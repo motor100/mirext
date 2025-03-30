@@ -134,7 +134,6 @@ if (callbackModalBtn) {
 
 function modalWindowOpen(win) {
   // Открытие окна
-  console.log(win.childNodes);
   body.classList.add('overflow-hidden');
   win.classList.add('active');
   setTimeout(function(){
@@ -167,3 +166,75 @@ function modalWindowClose(win) {
   }, 300);
 }
 
+
+// Отправка формы ajax
+const callbackModalForm = document.querySelector('#callback-modal-form');
+const callbackModalSubmitBtn = document.querySelector('#callback-modal-submit-btn');
+const callbackForm = document.querySelector('#callback-form');
+const callbackSubmitBtn = document.querySelector('#callback-submit-btn');
+
+function ajaxCallback(form) {
+
+  const inputs = form.querySelectorAll('.input-field');
+  let arr = [];
+
+  const inputName = form.querySelector('.js-required-name');
+  if (inputName.value.length < 3 || inputName.value.length > 20) {
+    inputName.classList.add('required');
+    arr.push(false);
+  }
+
+  /*
+  const inputPhone = form.querySelector('.js-required-phone');
+  if (inputPhone.value.length != 18) {
+    inputPhone.classList.add('required');
+    arr.push(false);
+  }
+  */
+
+  const inputEmail = form.querySelector('.js-required-email');
+  if (inputEmail.value.length < 3 || inputEmail.value.length > 40) {
+    inputEmail.classList.add('required');
+    arr.push(false);
+  }
+
+  const inputCheckboxes = form.querySelectorAll('.js-required-checkbox');
+
+  inputCheckboxes.forEach((item) => {
+    if (!item.checked) {
+      arr.push(false);
+    }
+  });
+
+  if (arr.length == 0) {
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].classList.remove('required');
+    }
+
+    fetch('/phpmailer/mailer.php', {
+      method: 'POST',
+      cache: 'no-cache',
+      body: new FormData(form)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+    alert("Спасибо. Мы свяжемся с вами.");
+
+    form.reset();
+
+  }
+
+  return false;
+}
+
+callbackModalSubmitBtn.onclick = () => {
+  ajaxCallback(callbackModalForm);
+}
+
+if (callbackSubmitBtn) {
+  callbackSubmitBtn.onclick = () => {
+    ajaxCallback(callbackForm);
+  }
+}
