@@ -184,17 +184,15 @@ function ajaxCallback(form) {
     arr.push(false);
   }
 
-  /*
   const inputPhone = form.querySelector('.js-required-phone');
   if (inputPhone.value.length != 18) {
     inputPhone.classList.add('required');
     arr.push(false);
   }
-  */
 
-  const inputEmail = form.querySelector('.js-required-email');
-  if (inputEmail.value.length < 3 || inputEmail.value.length > 40) {
-    inputEmail.classList.add('required');
+  const inputMessage = form.querySelector('.js-required-message');
+  if (inputMessage.value.length < 3 || inputMessage.value.length > 250) {
+    inputMessage.classList.add('required');
     arr.push(false);
   }
 

@@ -4,15 +4,15 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 if (isset($_POST["name"]) &&
    isset($_POST["phone"]) && 
-   isset($_POST["category"]) && 
-   isset($_POST["checkbox-privacy-policy"]) && 
-   isset($_POST["checkbox-private-data"])) {
+   isset($_POST["message"]) && 
+   isset($_POST["checkbox-read"]) && 
+   isset($_POST["checkbox-agree"])) {
 
     $name = htmlspecialchars($_POST["name"]);
     $phone = htmlspecialchars($_POST["phone"]);
-    $category = htmlspecialchars($_POST["category"]);
-    $checkbox_privacy_policy = $_POST["checkbox-privacy-policy"];
-    $checkbox_private_data = $_POST["checkbox-private-data"];
+    $message = htmlspecialchars($_POST["message"]);
+    $checkbox_read = $_POST["checkbox-read"];
+    $checkbox_agree = $_POST["checkbox-agree"];
 
     require 'PHPMailer.php';
     require 'SMTP.php';
@@ -27,14 +27,14 @@ if (isset($_POST["name"]) &&
     $mail->SMTPDebug = 0;
 
     $mail->Host = $Host;
-    $mail->Username = $Username; // Для Яндекс почты должно быть одинаковым
+    $mail->Username = $Username;
     $mail->Password = $Password;
 
     $mail->Port = 465;
 
     // От кого
-    $mail->From = $Username; // Для Яндекс почты должно быть одинаковым
-    $mail->FromName = $Username; // Для Яндекс почты должно быть одинаковым
+    $mail->From = $Username;
+    $mail->FromName = $Username;
 
     // Кому
     $mail->addAddress($To);
@@ -44,21 +44,21 @@ if (isset($_POST["name"]) &&
     }
 
     // Тема письма
-    $mail->Subject = 'Сообщение с сайта biosalts.ru';
+    $mail->Subject = 'Сообщение с сайта mirext.ru';
 
     $mail->isHTML(true);
 
     if (strlen($name) >= 3 &&
       strlen($name) <= 50 &&
       strlen($phone) == 18 && 
-      strlen($category) >= 3 &&
-      strlen($category) <= 100 &&
-      $checkbox_privacy_policy == "on" && 
-      $checkbox_private_data == "on") {
+      strlen($message) >= 3 &&
+      strlen($message) <= 100 &&
+      $checkbox_read == "on" && 
+      $checkbox_agree == "on") {
 
         // Тело письма
-        $mail->Body = "Имя: $name<br> Телефон: $phone<br> Категория: $category<br>";
-        $mail->AltBody = "Имя: $name\r\n Телефон: $phone\r\n Категория: $category\r\n";
+        $mail->Body = "Имя: $name<br> Телефон: $phone<br> Сообщение: $message<br>";
+        $mail->AltBody = "Имя: $name\r\n Телефон: $phone\r\n Сообщение: $message\r\n";
 
         $mail->send();
     }

@@ -1,18 +1,11 @@
 <?php
 
-$Host = 'ssl://smtp.yandex.ru';
-$Username = 'robot@natura-pharma.ru'; // Яндекс почта для домена
-$Password = 'kwfcepdbxnfujrrc'; // Пароль приложения в Яндекс почте
+$Host = 'ssl://smtp.spaceweb.ru';
+$Username = 'admin@mirext.ru';
+$Password = '24e38TCUU#EVDE2P';
 
-
-// smtp.spaceweb.ru
-
-// Порт 25 или 2525 (Для SSL 465)
-// admin@mirext.ru
-// 24e38TCUU#EVDE2P
-
-
-$From = 'robot@natura-pharma.ru';
+$From = 'admin@mirext.ru';
+// $To = 'mirekst@inbox.ru';
 $To = '260443@mail.ru';
 
 ?>
